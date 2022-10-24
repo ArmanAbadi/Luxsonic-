@@ -14,8 +14,12 @@ public abstract class ProximityTrigger : MonoBehaviour
             if((transform.position - target.transform.position).magnitude <= MinDistanceForTrigger)
             {
                 Action(target);
+                return;
             }
         }
+        NoTrigger();
     }
     public abstract void Action(GameObject Target);
+
+    public virtual void NoTrigger() { }
 }

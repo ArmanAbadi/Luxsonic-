@@ -36,4 +36,8 @@ public class GloveController : ProximityTrigger
             Destroy(gameObject);
         }
     }
+    public override void NoTrigger()
+    {
+        Destroy(gameObject);
+    }
 }
