@@ -14,7 +14,10 @@ public class ResultsController : MonoBehaviour
             Current = this;
         }
     }
-
+    private void Start()
+    {
+        GameController.Current.delegateResetGame += DisablePanel;
+    }
     public GameObject ResultsPanel;
     public Text ResultsText;
 
@@ -26,5 +29,9 @@ public class ResultsController : MonoBehaviour
     public void EnablePanel()
     {
         ResultsPanel.SetActive(true);
+    }
+    public void DisablePanel()
+    {
+        ResultsPanel.SetActive(false);
     }
 }
